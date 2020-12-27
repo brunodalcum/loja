@@ -42,8 +42,8 @@ class LoginController extends Controller
     public function showLoginForm()
     {
 
-       // $admin = Admin::where('id', 1)->first();
-       // $admin->password = bcrypt('032325br');
+       //$admin = Admin::where('id', 4)->first();
+        //$admin->password = bcrypt('032325br');
         //$admin->save();
          if (Auth::id()) {
              return redirect()->back();
