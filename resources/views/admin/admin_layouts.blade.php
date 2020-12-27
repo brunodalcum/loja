@@ -50,31 +50,25 @@
     <div class="sl-sideleft">
 
         <div class="sl-sideleft-menu">
-            <a href="index.html" class="sl-menu-link active">
+            <a href="{{ url('admin/home') }}" class="sl-menu-link active">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
                     <span class="menu-item-label">Dashboard</span>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
-            <a href="widgets.html" class="sl-menu-link">
-                <div class="sl-menu-item">
-                    <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
-                    <span class="menu-item-label">Cards &amp; Widgets</span>
-                </div><!-- menu-item -->
-            </a><!-- sl-menu-link -->
+
+
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
                     <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
-                    <span class="menu-item-label">Charts</span>
+                    <span class="menu-item-label">Categoria</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="chart-morris.html" class="nav-link">Morris Charts</a></li>
-                <li class="nav-item"><a href="chart-flot.html" class="nav-link">Flot Charts</a></li>
-                <li class="nav-item"><a href="chart-chartjs.html" class="nav-link">Chart JS</a></li>
-                <li class="nav-item"><a href="chart-rickshaw.html" class="nav-link">Rickshaw</a></li>
-                <li class="nav-item"><a href="chart-sparkline.html" class="nav-link">Sparkline</a></li>
+                <li class="nav-item"><a href="chart-morris.html" class="nav-link">Categoria</a></li>
+                <li class="nav-item"><a href="chart-flot.html" class="nav-link">Sub Categoria</a></li>
+                <li class="nav-item"><a href="chart-chartjs.html" class="nav-link">Marca</a></li>
             </ul>
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">
@@ -173,12 +167,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-header wd-200">
                         <ul class="list-unstyled user-profile-nav">
-                            <li><a href=""><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
-                            <li><a href=""><i class="icon ion-ios-gear-outline"></i> Settings</a></li>
-                            <li><a href=""><i class="icon ion-ios-download-outline"></i> Downloads</a></li>
-                            <li><a href=""><i class="icon ion-ios-star-outline"></i> Favorites</a></li>
-                            <li><a href=""><i class="icon ion-ios-folder-outline"></i> Collections</a></li>
-                            <li><a href="{{ route("admin.logout") }}"><i class="icon ion-power"></i> Sign Out</a></li>
+                            <li><a href=""><i class="icon ion-ios-person-outline"></i> Editar Perfil</a></li>
+                            <li><a href="{{ route('admin.password.change') }}"><i class="icon ion-ios-gear-outline"></i> Alterar Senha</a></li>
+                            <li><a href="{{ route("admin.logout") }}"><i class="icon ion-power"></i> Logout</a></li>
                         </ul>
                     </div><!-- dropdown-menu -->
                 </div><!-- dropdown -->
