@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('layouts.app');});
 //auth & user
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
