@@ -23,3 +23,8 @@ Route::post('admin/update/reset', 'Admin\ResetPasswordController@reset')->name('
 Route::get('/admin/Change/Password','AdminController@ChangePassword')->name('admin.password.change');
 Route::post('/admin/password/update','AdminController@Update_pass')->name('admin.password.update');
 Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
+
+
+/// Admin Sessão Categorias
+
+Route::get('admin/categories', 'Admin\Category\CategoryController@category')->name('categories');
