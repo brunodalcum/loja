@@ -475,8 +475,8 @@
         e.preventDefault();
         var link = $(this).attr("href");
         swal({
-            title: "Are you Want to delete?",
-            text: "Once Delete, This will be Permanently Delete!",
+            title: "Você deseja Apagar este registro??",
+            text: "Caso Exclua, será definitivo!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -485,7 +485,7 @@
                 if (willDelete) {
                     window.location.href = link;
                 } else {
-                    swal("Safe Data!");
+                    swal("Não foram excluídos!");
                 }
             });
     });

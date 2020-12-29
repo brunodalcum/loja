@@ -30,13 +30,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($category as $row)
+                        @foreach($category as $key=>$row)
                         <tr>
-                            <td>{{ $row->id }}</td>
+                            <td>{{ $key + 1 }}</td>
                             <td>{{ $row->category_name }}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-info">Editar</a>
-                                <a href="" class="btn btn-sm btn-danger" id="delete">Excluir</a>
+                                <a href="{{ \Illuminate\Support\Facades\URL::to('edit/category/'.$row->id) }}" class="btn btn-sm btn-info">Editar</a>
+                                <a href="{{ \Illuminate\Support\Facades\URL::to('delete/category/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Excluir</a>
                             </td>
 
                         </tr>
