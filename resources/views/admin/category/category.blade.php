@@ -30,16 +30,17 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($category as $row)
                         <tr>
-                            <td>Tiger</td>
-                            <td>Nixon</td>
+                            <td>{{ $row->id }}</td>
+                            <td>{{ $row->category_name }}</td>
                             <td>
                                 <a href="" class="btn btn-sm btn-info">Editar</a>
                                 <a href="" class="btn btn-sm btn-danger" id="delete">Excluir</a>
                             </td>
 
                         </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                 </div><!-- table-wrapper -->
@@ -61,14 +62,23 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="" method="{{ route('store.category') }}">
-                        @csrf
                     <div class="modal-body pd-20">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
+                    <form action="{{ route('store.category') }}" method="post">
+                        @csrf
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nome Categoria</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                <input type="text" class="form-control" id="exampleInputEmail1"
                                        aria-describedby="emailHelp" placeholder="Categoria" name="category_name">
                             </div>
 
@@ -76,7 +86,7 @@
                         </div><!-- modal-body -->
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-info pd-x-20">Salvar</button>
-                        <button type="submit" class="btn btn-secondary pd-x-20" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-secondary pd-x-20" data-dismiss="modal">Fechar</button>
                     </div>
                     </form>
                 </div>
