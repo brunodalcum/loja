@@ -59,5 +59,10 @@ Route::post('update/coupon/{id}', 'Admin\Category\CouponController@UpdateCoupon'
 Route::get('admin/newslater', 'Admin\Category\CouponController@Newslater')->name('admin.newslater');
 Route::get('delete/sub/{id}', 'Admin\Category\CouponController@DeleteSub');
 
+// Admin Sessão Produtos
+Route::get('admin/product/all', 'Admin\ProductController@index')->name('all.product');
+Route::get('admin/product/add', 'Admin\ProductController@create')->name('add.product');
+
+
 // Frontend Todas as rotas
 Route::post('store/newslater', 'FrontController@StoreNewslater')->name('store.newslater');
