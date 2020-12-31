@@ -42,7 +42,7 @@
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Categoria: <span class="tx-danger">*</span></label>
                                 <select class="form-control select2" data-placeholder="Selecione a Categoria" name="category_id">
-                                    <option label="Choose Category"></option>
+                                    <option label="Escolha Categoria"></option>
                                     @foreach($category as $row)
                                     <option value="{{ $row->id }}">{{ $row->category_name }}</option>
                                     @endforeach
@@ -54,11 +54,8 @@
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Sub Categoria: <span class="tx-danger">*</span></label>
                                 <select class="form-control select2" data-placeholder="Choose country" name="subcategory_id">
-                                    <option label="Choose country"></option>
-                                    <option value="USA">United States of America</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="China">China</option>
-                                    <option value="Japan">Japan</option>
+                                    <option label="Escolha Sub Categoria"></option>
+
                                 </select>
                             </div>
                         </div><!-- col-4 -->
@@ -66,7 +63,7 @@
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Marca: <span class="tx-danger">*</span></label>
                                 <select class="form-control select2" data-placeholder="Choose country" name="brand_id">
-                                    <option label="Choose Brand"></option>
+                                    <option label="Escolha a Marca"></option>
                                     @foreach($brand as $br)
                                     <option value="{{ $br->id }}">{{ $br->brand_name }}</option>
                                     @endforeach

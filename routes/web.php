@@ -70,6 +70,9 @@ Route::get('delete/product/{id}', 'Admin\ProductController@DeleteProduct');
 
 Route::get('view/product/{id}', 'Admin\ProductController@ViewProduct');
 Route::get('edit/product/{id}', 'Admin\ProductController@EditProduct');
+Route::post('update/product/withoutphoto/{id}', 'Admin\ProductController@UpdateProductWithoutPhoto');
+
+Route::post('update/product/photo/{id}', 'Admin\ProductController@UpdateProductPhoto');
 
 // Sub Categoria com Ajax
 Route::get('get/subcategory/{category_id}', 'Admin\ProductController@GetSubCat');
