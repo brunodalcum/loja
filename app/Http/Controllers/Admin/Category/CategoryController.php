@@ -45,7 +45,7 @@ class CategoryController extends Controller
     {
         DB::table('categories')->where('id', $id)->delete();
         $notification=array(
-            'messege'=>'Categoria Adicionada com sucesso',
+            'messege'=>'Categoria Excluída com sucesso',
             'alert-type'=>'success'
         );
         return Redirect()->back()->with($notification);

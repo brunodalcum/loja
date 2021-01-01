@@ -185,13 +185,13 @@ class ProductController extends Controller
         $update = DB::table('products')->where('id',$id)->update($data);
         if ($update) {
             $notification=array(
-                'messege'=>'Product Successfully Updated',
+                'messege'=>'Produto Atualizado com Sucesso',
                 'alert-type'=>'success'
             );
             return Redirect()->route('all.product')->with($notification);
         }else{
             $notification=array(
-                'messege'=>'Nothing TO Update',
+                'messege'=>'Não foi atualizado!',
                 'alert-type'=>'success'
             );
             return Redirect()->route('all.product')->with($notification);
@@ -226,7 +226,7 @@ class ProductController extends Controller
             $data['image_one'] = $image_url;
             $productimg = DB::table('products')->where('id',$id)->update($data);
             $notification=array(
-                'messege'=>'Image One Updated Successfully',
+                'messege'=>'Imagem Um Atualizada com sucesso!',
                 'alert-type'=>'success'
             );
             return Redirect()->route('all.product')->with($notification);
@@ -243,7 +243,7 @@ class ProductController extends Controller
             $data['image_two'] = $image_url;
             $productimg = DB::table('products')->where('id',$id)->update($data);
             $notification=array(
-                'messege'=>'Image Two Updated Successfully',
+                'messege'=>'Imagem Dois Atualizada com Sucesso!',
                 'alert-type'=>'success'
             );
             return Redirect()->route('all.product')->with($notification);
@@ -261,7 +261,7 @@ class ProductController extends Controller
             $data['image_three'] = $image_url;
             $productimg = DB::table('products')->where('id',$id)->update($data);
             $notification=array(
-                'messege'=>'Image Three Updated Successfully',
+                'messege'=>'Imagem 3 Atualizada com Sucesso!',
                 'alert-type'=>'success'
             );
             return Redirect()->route('all.product')->with($notification);
