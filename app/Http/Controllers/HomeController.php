@@ -41,22 +41,22 @@ class HomeController extends Controller
                       $user=User::find(Auth::id());
                       $user->password=Hash::make($request->password);
                       $user->save();
-                      Auth::logout();  
+                      Auth::logout();
                       $notification=array(
-                        'messege'=>'Password Changed Successfully ! Now Login with Your New Password',
+                        'messege'=>'Senha alterada com sucesso ! Agora faça login com sua nova senha',
                         'alert-type'=>'success'
                          );
-                       return Redirect()->route('login')->with($notification); 
+                       return Redirect()->route('login')->with($notification);
                  }else{
                      $notification=array(
-                        'messege'=>'New password and Confirm Password not matched!',
+                        'messege'=>'Nova senha e Confirmar senha não correspondem!',
                         'alert-type'=>'error'
                          );
                        return Redirect()->back()->with($notification);
-                 }     
+                 }
       }else{
         $notification=array(
-                'messege'=>'Old Password not matched!',
+                'messege'=>'A Senha antiga não Corresponde!',
                 'alert-type'=>'error'
                  );
                return Redirect()->back()->with($notification);
@@ -69,11 +69,11 @@ class HomeController extends Controller
         // $logout= Auth::logout();
             Auth::logout();
             $notification=array(
-                'messege'=>'Successfully Logout',
+                'messege'=>'Logout Efetuado com Sucesso',
                 'alert-type'=>'success'
                  );
              return Redirect()->route('login')->with($notification);
-       
+
 
     }
 }

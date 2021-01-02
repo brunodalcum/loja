@@ -39,20 +39,12 @@
                             <div class="top_bar_menu">
                                 <ul class="standard_dropdown top_bar_dropdown">
                                     <li>
-                                        <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">Italian</a></li>
-                                            <li><a href="#">Spanish</a></li>
-                                            <li><a href="#">Japanese</a></li>
-                                        </ul>
+                                        <a href="#">Português<i class="fas fa-chevron-down"></i></a>
+
                                     </li>
                                     <li>
-                                        <a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
-                                        <ul>
-                                            <li><a href="#">EUR Euro</a></li>
-                                            <li><a href="#">GBP British Pound</a></li>
-                                            <li><a href="#">JPY Japanese Yen</a></li>
-                                        </ul>
+                                        <a href="#">R$ Real BR <i class="fas fa-chevron-down"></i></a>
+
                                     </li>
                                 </ul>
                             </div>
@@ -80,24 +72,25 @@
                         </div>
                     </div>
 
-                    <!-- Search -->
+                @php
+                    $category = \Illuminate\Support\Facades\DB::table('categories')->get();
+                @endphp
+                <!-- Search -->
                     <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
                         <div class="header_search">
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                    <form  method="post" action="" class="header_search_form clearfix">
+                                        @csrf
+                                        <input type="search" required="required" class="header_search_input" placeholder="Pesquisa de produtos..." name="search">
                                         <div class="custom_dropdown">
                                             <div class="custom_dropdown_list">
-                                                <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                                <span class="custom_dropdown_placeholder clc">Todas as Categorias</span>
                                                 <i class="fas fa-chevron-down"></i>
                                                 <ul class="custom_list clc">
-                                                    <li><a class="clc" href="#">All Categories</a></li>
-                                                    <li><a class="clc" href="#">Computers</a></li>
-                                                    <li><a class="clc" href="#">Laptops</a></li>
-                                                    <li><a class="clc" href="#">Cameras</a></li>
-                                                    <li><a class="clc" href="#">Hardware</a></li>
-                                                    <li><a class="clc" href="#">Smartphones</a></li>
+                                                    @foreach($category as $row)
+                                                        <li><a class="clc" href="#">{{ $row->category_name }}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
