@@ -212,6 +212,14 @@
                             </label>
 
                         </div> <!-- col-4 -->
+                        <div class="col-lg-4">
+                            <label class="ckbox">
+                                <input type="checkbox" name="buyone_getone" value="1">
+                                <span>Compre Um e ganhe Outro</span>
+                            </label>
+
+                        </div> <!-- col-4 -->
+
 
 
                     </div><!-- end row -->

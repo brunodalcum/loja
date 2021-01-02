@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row ">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Change Password') }}</div>
+                <div class="card-header">{{ __('Alterar a Senha') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}" aria-label="{{ __('Reset Password') }}">
@@ -13,7 +13,7 @@
 
 
                         <div class="form-group row">
-                            <label for="oldpass" class="col-md-4 col-form-label text-md-right">{{ __('Old Password') }}</label>
+                            <label for="oldpass" class="col-md-4 col-form-label text-md-right">{{ __('Senha Antiga') }}</label>
 
                             <div class="col-md-6">
                                 <input id="oldpass" type="password" class="form-control{{ $errors->has('oldpass') ? ' is-invalid' : '' }}" name="oldpass" value="{{ $oldpass ?? old('oldpass') }}" required autofocus>
@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Nova Senha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirme Nova Senha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
@@ -51,7 +51,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
+                                    {{ __('Altere a Senha') }}
                                 </button>
                             </div>
                         </div>
@@ -59,6 +59,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-4">
+            <div class="card">
+                <img src="{{ asset('public/frontend/images/brunoimagem.jpeg') }}" class="card-img"
+                     style="height: 90px; width: 90px; margin-left: 34%;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ Auth::user()->name }}</h5>
+
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{{ route('password.change') }}">Mudar a Senha</a> </li>
+                    <li class="list-group-item">Linha 1</li>
+                    <li class="list-group-item">Linha 1</li>
+                </ul>
+                <div class="card-body">
+                    <a href="{{ route('user.logout') }}" class="btn btn-danger btn-sm btn-block">Sair</a>
+                </div>
+            </div>
     </div>
 </div>
 @endsection
