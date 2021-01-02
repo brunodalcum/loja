@@ -19,22 +19,28 @@
                 @csrf
                 <div class="form-layout">
                     <div class="row mg-b-25">
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label">Nome do Produto: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="product_name"  placeholder="Digite o Nome do Produto">
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label">Código do Produto: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="product_code"  placeholder="Digite o Código">
                             </div>
                         </div><!-- col-4 -->
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="form-control-label">Quantidade: <span class="tx-danger">*</span></label>
                                 <input class="form-control" type="text" name="product_quantity" value="" placeholder="Digite a Quantidade">
+                            </div>
+                        </div><!-- col-4 -->
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label class="form-control-label">Preço com Desconto: <span class="tx-danger">*</span></label>
+                                <input class="form-control" type="text" name="discount_price" value="" placeholder="Digite o Preço com desconto!">
                             </div>
                         </div><!-- col-4 -->
 

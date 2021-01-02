@@ -74,6 +74,25 @@ Route::post('update/product/withoutphoto/{id}', 'Admin\ProductController@UpdateP
 
 Route::post('update/product/photo/{id}', 'Admin\ProductController@UpdateProductPhoto');
 
+// Sessão Admin Blog
+
+Route::get('blog/category/list', 'Admin\PostController@BlogCatList')->name('add.blog.categorylist');
+Route::post('admin/store/blog', 'Admin\PostController@BlogCatStore')->name('store.blog.category');
+Route::get('delete/blogcategory/{id}', 'Admin\PostController@DeleteBlogCat');
+Route::get('edit/blogcategory/{id}', 'Admin\PostController@EditBlogCat');
+Route::post('update/blog/category/{id}', 'Admin\PostController@UpdateBlogCat');
+
+
+Route::get('admin/add/post', 'Admin\PostController@Create')->name('add.blogpost');
+Route::get('admin/all/post', 'Admin\PostController@index')->name('all.blogpost');
+
+Route::post('admin/store/post', 'Admin\PostController@store')->name('store.post');
+
+Route::get('delete/post/{id}', 'Admin\PostController@DeletePost');
+Route::get('edit/post/{id}', 'Admin\PostController@EditPost');
+
+Route::post('update/post/{id}', 'Admin\PostController@UpdatePost');
+
 // Sub Categoria com Ajax
 Route::get('get/subcategory/{category_id}', 'Admin\ProductController@GetSubCat');
 
@@ -81,3 +100,12 @@ Route::get('get/subcategory/{category_id}', 'Admin\ProductController@GetSubCat')
 
 // Frontend Todas as rotas
 Route::post('store/newslater', 'FrontController@StoreNewslater')->name('store.newslater');
+
+/// Blog Post Route
+
+Route::get('blog/post/', 'BlogController@blog')->name('blog.post');
+
+Route::get('language/english', 'BlogController@English')->name('language.english');
+
+
+Route::get('blog/single/{id}', 'BlogController@BlogSingle');
